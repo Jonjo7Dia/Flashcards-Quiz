@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Link } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import CreateNewDeck from "./pages/CreateNewDeck";
+import Favorites from "./pages/Favorites";
+import Layout from "./layout/Layout";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <h1>Quizlet-clone</h1>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="create" element={<CreateNewDeck />} />
+        <Route path="favorites" element={<Favorites />} />
+      </Routes>
+    </Layout>
   );
 }
 

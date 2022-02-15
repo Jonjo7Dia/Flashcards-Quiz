@@ -69,3 +69,26 @@ a {
     
     
 }
+
+.notSearching {
+    width: 50%;
+    padding: 0;
+    -webkit-transition: width 200ms ease-in-out;
+    -moz-transition: width 200ms ease-in-out;
+    -o-transition: width 200ms ease-in-out;
+    transition: width 200ms ease-in-out;
+    border-style: none !important;
+}
+.searching{
+    -webkit-transition: width 200ms ease-in-out;
+    -moz-transition: width 200ms ease-in-out;
+    -o-transition: width 200ms ease-in-out;
+    transition: width 200ms ease-in-out;
+    width: 100%;
+    padding: 0;
+    border-style: none !important;
+}
+.search:hover {
+    border-style: none !important;
+}
+

@@ -2,7 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CreateNewDeck from "./pages/CreateNewDeck";
 import Favorites from "./pages/Favorites";
-import Layout from "./layout/Layout";
+import Layout from "./components/layout/Layout";
 
 function App() {
   return (

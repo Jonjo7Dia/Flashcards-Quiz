@@ -1,7 +1,11 @@
+
+import Create from '../components/create/Create';
+
 function CreateNewDeck() {
-    return ( <p>
-        CreateNewDeck
-    </p>)
-};
+  return (
+      <Create/>
+
+  );
+}
 
 export default CreateNewDeck;

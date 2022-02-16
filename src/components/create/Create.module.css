@@ -1,9 +1,16 @@
+div{
+    height: 100%;
+    width: 100%;
+}
+
 @media (min-width: 800px){
+
     .mobile{
         display: none;
     }
     .normal{
         display: block;
+
     }
 }
 

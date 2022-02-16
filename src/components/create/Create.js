@@ -3,7 +3,7 @@ import CreateMobile from './createUiMobile/CreateMobile';
 import CreateNormal from './createUiNormal/CreateNormal';
 function Create(){
     return (
-        <div>
+        <div className={classes.body}>
             <div className={classes.mobile}>
                 <CreateMobile />
             </div>

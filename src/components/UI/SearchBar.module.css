@@ -30,6 +30,10 @@
 
 
 }
+.searchInput::placeholder {
+    color: #525662;
+    font-family: 'Montserrat', sans-serif;
+}
 
 .searchIcon {
     margin-right: .5rem;

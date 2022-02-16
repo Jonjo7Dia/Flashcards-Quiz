@@ -7,7 +7,6 @@ import Layout from "./components/layout/Layout";
 function App() {
   return (
     <Layout>
-      <h1>Quizlet-clone</h1>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="create" element={<CreateNewDeck />} />

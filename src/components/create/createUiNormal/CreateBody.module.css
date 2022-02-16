@@ -1,0 +1,28 @@
+.addCard {
+ width: 100%;
+ background-color: white;
+ height: 5rem;
+ display: flex;
+ justify-content: center;
+ border-radius: 0.5rem;
+ align-items: center;
+}
+.addButton {
+    height: 50%;
+    background-color: transparent;
+    outline: none;
+    border:none;
+    font-size: 1.25rem;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    border-bottom-color: #3ccfcf;
+    font-family: inherit;
+}
+
+.addCard, .addButton:hover {
+    cursor: pointer;
+
+}
+.addCard:hover .addButton{
+    border-bottom-color: #ffcd1f;
+}

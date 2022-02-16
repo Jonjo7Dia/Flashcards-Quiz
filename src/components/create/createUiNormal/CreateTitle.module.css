@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+.holder {
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 6.875rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.header div {
+  display: flex;
+  align-items: center;
+}
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.create {
+  justify-content: flex-end;
+  width: 7%;
+}
+
+.createButton {
+  height: 50%;
+  width: 100%;
+  background-color: #3ccfcf;
+  border-style: none;
+  border-radius: 0.25rem;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+}
+.description {
+  width: 100%;
+  height: 70%;
+}
+.description div {
+  height: 30%;
+  width: 50%;
+  margin: 0;
+}
+.description input {
+  width: 100%;
+  color: #dadce8;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #222;
+
+  font-family: "Source Sans Pro", sans-serif;
+}
+.description .span {
+  width: 100%;
+  height: 0.25rem;
+  box-shadow: 0 0.125rem 0 0 #303545;
+  display: block;
+  transition: all 0.12s cubic-bezier(0.47, 0, 0.75, 0.72);
+  margin-bottom: 1rem;
+}
+.description .spanYellow{
+    width: 100%;
+    height: 0.25rem;
+    box-shadow: 0 0.125rem 0 0 #ffcd1f;
+    display: block;
+    transition: all 0.12s cubic-bezier(0.47, 0, 0.75, 0.72);
+    margin-bottom: 1rem;
+}
+.description .label {
+  color: #939bb4;
+  font-family: "Source Sans Pro", sans-serif;
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+::placeholder {
+  color: #dadce8;
+  font-family: "Source Sans Pro", sans-serif;
+
+}

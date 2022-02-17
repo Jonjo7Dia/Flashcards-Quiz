@@ -6,6 +6,8 @@
  justify-content: center;
  border-radius: 0.5rem;
  align-items: center;
+ box-shadow: 0 1px 2px rgba(0, 0, 0, 0.26);
+
 }
 .addButton {
     height: 50%;
@@ -17,6 +19,7 @@
     border-bottom-width: 4px;
     border-bottom-color: #3ccfcf;
     font-family: inherit;
+    
 }
 
 .addCard, .addButton:hover {

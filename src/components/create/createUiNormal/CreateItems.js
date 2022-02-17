@@ -1,9 +1,15 @@
 import classes from './CreateItems.module.css'
-
+import NewItem from './NewItem'
 function CreateItems(props){
     return (
         <div className={classes.holder}>
-           hello 
+            {props.cardItems.map(index => (
+                <NewItem key={index.placement} place={index.placement}/>
+            ))}
+           
+        
+
+
         </div>
     )
 

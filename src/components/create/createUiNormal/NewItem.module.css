@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap");
+.card {
+  background-color: white;
+  height: 10rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.26);
+}
+.div {
+  width: 100%;
+}
+.placeholder {
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: #e7e8e9;
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.placeholder div {
+  height: 100%;
+  width: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputs {
+  height: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.position {
+  color: #949cb2;
+  cursor: default;
+}
+.delete:hover {
+  cursor: pointer;
+  color: #ffcd1f;
+}
+
+.defurl {
+  display: none;
+}
+
+.term {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.imageButton {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  
+}
+.wrapper {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper input {
+  margin-top: 5%;
+  width: 100%;
+  color: #dadce8;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #222;
+
+  font-family: "Source Sans Pro", "sans-serif";
+}
+
+.wrapper input::placeholder {
+  font-family: "Source Sans Pro", "sans-serif";
+}
+
+.term .span {
+  width: 100%;
+  height: 0.25rem;
+  box-shadow: 0 0.125rem 0 0 #303545;
+  display: block;
+  transition: all 0.12s cubic-bezier(0.47, 0, 0.75, 0.72);
+  margin-bottom: 1rem;
+}
+.term .spanYellow {
+  width: 100%;
+  height: 0.25rem;
+  box-shadow: 0 0.125rem 0 0 #ffcd1f;
+  display: block;
+  transition: all 0.12s cubic-bezier(0.47, 0, 0.75, 0.72);
+  margin-bottom: 1rem;
+}
+
+.term .label {
+  color: #939bb4;
+  font-family: "Source Sans Pro", sans-serif;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+
+.button {
+  border: 0.125rem dashed #d9dde8;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  width: 80%;
+  height: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.button:hover .imageLogo{
+    color: #ffcd1f;
+}

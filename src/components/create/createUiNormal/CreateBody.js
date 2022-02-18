@@ -17,8 +17,8 @@ function CreateBody() {
     return (
         <div>
            <CreateItems  />
-           <div className={classes.addCard}>
-           <button className={classes.addButton} onClick={addTermHandler}>+ ADD CARD</button>
+           <div className={classes.addCard} onClick={addTermHandler}>
+           <button className={classes.addButton} >+ ADD CARD</button>
 
             </div>
         </div>

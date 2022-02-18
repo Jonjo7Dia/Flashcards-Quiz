@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 function CreateItems(){
 
     const DUMMY_PRODUCTS = useSelector((state => state.deck.items));
+    // console.log(DUMMY_PRODUCTS);
     return (
         <div className={classes.holder}>
             {DUMMY_PRODUCTS.map(index => (

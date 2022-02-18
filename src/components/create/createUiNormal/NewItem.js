@@ -2,8 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faImage } from "@fortawesome/free-solid-svg-icons";
 import classes from "./NewItem.module.css";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import {deckActions }from '../../../store/deck-slice';
+
 
 function NewItem(props) {
+  const dispatch = useDispatch();
   const [isFocused, setIsFocused] = useState(false);
   const [isDescFocused, setIsDescFocused] = useState(false);
   const [wantImage, setWantImage] = useState(false);
@@ -37,6 +41,9 @@ function NewItem(props) {
       });
 
   }
+  const deleteItemHandler = () => {
+    dispatch(deckActions.removeItemFromDeck(props.place));
+};
 
   return (
     <div className={classes.card}>
@@ -44,7 +51,7 @@ function NewItem(props) {
         <div className={classes.position}>
           <span>{props.place}</span>
         </div>
-        <div className={classes.delete}>
+        <div className={classes.delete} onClick ={deleteItemHandler}>
           <span>
             <FontAwesomeIcon icon={faTrashCan} className={classes.trashLogo} />
           </span>

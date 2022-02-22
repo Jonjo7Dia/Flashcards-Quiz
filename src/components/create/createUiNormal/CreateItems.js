@@ -1,14 +1,19 @@
 import classes from './CreateItems.module.css'
 import NewItem from './NewItem';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deckActions } from '../../../store/deck-slice';
 function CreateItems(){
 
     const DUMMY_PRODUCTS = useSelector((state => state.deck.items));
-    // console.log(DUMMY_PRODUCTS);
+    const key = useSelector((state =>  state.deck.totalChanges));
+    console.log(key);
+    const dispatch = useDispatch();
+    dispatch(deckActions.rerender());
     return (
         <div className={classes.holder}>
             {DUMMY_PRODUCTS.map(index => (
-                <NewItem key={index.placement} place={index.placement}/>
+                <NewItem key={index.id.toString()} id={index.id} place={index.placement} term ={index.term} definition={index.definition} url={index.url}/>
+                
             ))}
            
         

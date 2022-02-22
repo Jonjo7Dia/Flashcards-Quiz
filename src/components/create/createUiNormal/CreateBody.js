@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import CreateItems from './CreateItems';
 import classes from './CreateBody.module.css'
 import {useDispatch} from 'react-redux';
@@ -16,7 +16,7 @@ function CreateBody() {
 
     return (
         <div>
-           <CreateItems  />
+           <CreateItems/>
            <div className={classes.addCard} onClick={addTermHandler}>
            <button className={classes.addButton} >+ ADD CARD</button>
 

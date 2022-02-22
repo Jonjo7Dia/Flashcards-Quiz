@@ -1,18 +1,25 @@
-import { createSlice, configureStore } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const deckSlice = createSlice({
   name: "deck",
   initialState: {
     items: [
-      { placement: 1, id: 1,  term: "", definition: "", url: "" },
-      { placement: 2, id: 2, term: "", definition: "", url: "" },
+      { placement: 1, id: 1, term: "", definition: "", url: "" },
+      {
+        placement: 2,
+        id: 2,
+        term: "Jonathan",
+        definition: "Hjelmstrom",
+        url: "",
+      },
     ],
+    totalChanges: 400,
   },
   reducers: {
     addItemToDeck(state) {
       const newItem = {
         placement: state.items.length + 1,
-        id: state.items.length + 1,
+        id: state.totalChanges + 1,
         term: "",
         definition: "",
         url: "",
@@ -25,26 +32,25 @@ const deckSlice = createSlice({
         definition: newItem.definition,
         url: newItem.url,
       });
+      state.totalChanges++;
     },
     removeItemFromDeck(state, action) {
-      const id = action.payload;
-      let number = id;
-      // console.log(number);
-      
+      const id = action.payload.id;
+
       state.items = state.items.filter((item) => item.id !== id);
-      let length = state.items.length;
-      for (let x = -1 ; x < length - number ; x++){
-         let placement = state.items[x + number].placement;
-      
-         state.items[x+number].placement = x + number + 1;
-         state.items[x+number].id = x + number + 1;
-
+      state.totalChanges++;
+    },
+    addTermToDeck(state, action) {
+      let yolo = action.payload;
+      state.items[yolo.placement - 1] = yolo;
+    },
+    rerender(state) {
+      for (let x = 0; x < state.items.length; x++) {
+        state.items[x].placement = x + 1;
       }
-
     },
   },
 });
-
 
 export const deckActions = deckSlice.actions;
 

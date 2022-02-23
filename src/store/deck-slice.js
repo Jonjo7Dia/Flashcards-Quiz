@@ -49,6 +49,13 @@ const deckSlice = createSlice({
         state.items[x].placement = x + 1;
       }
     },
+    reset(state){
+      state.items = [
+        { placement: 1, id: 1, term: "", definition: "", url: "" },
+        {placement: 2,id: 2,term: "",definition: "",url: "" },
+      ];
+      state.totalChanges = 400;
+    }
   },
 });
 

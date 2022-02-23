@@ -4,10 +4,12 @@ import CreateBody from "./CreateBody";
 import { useDispatch, useSelector } from "react-redux";
 import { setActions } from "../../../store/set-slice";
 import { useEffect } from "react";
+import { deckActions } from "../../../store/deck-slice";
 
 function CreateNormal() {
   const dispatch = useDispatch();
   const DUMMY_PRODUCTS = useSelector((state) => state.deck.items);
+
   const view = useSelector((state) => state.set.deck);
   const title = useSelector((state) => state.set.title);
   useEffect(() => {
@@ -37,7 +39,13 @@ function CreateNormal() {
         alert('Your set is missing information');
     }
     else {
-        console.log('success');
+        dispatch(setActions.submitDeck());
+        dispatch(setActions.resetDeck());
+        dispatch(deckActions.reset());
+        dispatch(deckActions.rerender());
+
+        console.log(DUMMY_PRODUCTS);
+        console.log(title);
     }
   }
 

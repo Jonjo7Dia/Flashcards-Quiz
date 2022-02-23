@@ -9,6 +9,7 @@ function CreateNormal() {
   const dispatch = useDispatch();
   const DUMMY_PRODUCTS = useSelector((state) => state.deck.items);
   const view = useSelector((state) => state.set.deck);
+  const title = useSelector((state) => state.set.title);
   useEffect(() => {
     // Update the document title using the browser API
     let s = 0;
@@ -32,12 +33,11 @@ function CreateNormal() {
   }, [DUMMY_PRODUCTS]);
   function onSubmitHandler(event) {
     event.preventDefault();
-    if (DUMMY_PRODUCTS.length !== view.length){
-        alert('some of your cards are missing information');
+    if (DUMMY_PRODUCTS.length !== view.length || title.length === 0){
+        alert('Your set is missing information');
     }
     else {
-        console.log(view);
-        console.log(DUMMY_PRODUCTS);
+        console.log('success');
     }
   }
 

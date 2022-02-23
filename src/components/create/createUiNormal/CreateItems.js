@@ -5,8 +5,6 @@ import { deckActions } from '../../../store/deck-slice';
 function CreateItems(){
 
     const DUMMY_PRODUCTS = useSelector((state => state.deck.items));
-    const key = useSelector((state =>  state.deck.totalChanges));
-    console.log(key);
     const dispatch = useDispatch();
     dispatch(deckActions.rerender());
     return (

@@ -8,8 +8,8 @@ const deckSlice = createSlice({
       {
         placement: 2,
         id: 2,
-        term: "Jonathan",
-        definition: "Hjelmstrom",
+        term: "",
+        definition: "",
         url: "",
       },
     ],

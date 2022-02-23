@@ -38,6 +38,10 @@
   font-weight: 600;
   font-family: inherit;
 }
+.createButton:hover {
+  cursor: pointer;
+  background-color: #53a4a6;
+}
 .description {
   width: 100%;
   height: 70%;
@@ -46,6 +50,7 @@
   height: 30%;
   width: 50%;
   margin: 0;
+  margin-bottom: 1rem;
 }
 .description input {
   width: 100%;

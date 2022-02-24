@@ -3,31 +3,13 @@ import Explore from "./Explore";
 import Favorites from "./Favorites";
 import Recents from "./Recents";
 import classes from './Home.module.css';
+import { useSelector } from "react-redux";
 function Home() {
-  const url =
-    "https://react-hooks-update-27f2d-default-rtdb.firebaseio.com/sets.json";
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadedSets, setLoadedSets] = useState([]);
-  useEffect(() => {
-    setIsLoading(true);
-    fetch(url)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        const sets = [];
-        for (const key in data) {
-          const set = { id: key, ...data[key] };
-          sets.push(set);
-        }
-        setIsLoading(false);
-        setLoadedSets(sets);
-      });
-  }, []);
+  // const fav = useSelector((state) => state.fav.fav);
+  const loadedSets = useSelector((state )=> state.request.requests);
 
-  if (isLoading) {
-    return <p>Loading...</p>;
-  } else {
+
+
     return (
       <div className={classes.home}>
         <div className={classes.wrapper}>
@@ -38,7 +20,7 @@ function Home() {
         </div>
       </div>
     );
-  }
+
 }
 
 export default Home;

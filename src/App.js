@@ -5,10 +5,33 @@ import Favorites from "./pages/Favorites";
 import Layout from "./components/layout/Layout";
 import { useDispatch } from "react-redux";
 import { favActions } from "../src/store/fav-slice";
+import { requestActions } from "../src/store/request-slice";
+
+import { useEffect, useState } from "react";
 
 function App() {
   const dispatch = useDispatch();
-  dispatch(favActions.setFavs());
+  const url =
+    "https://react-hooks-update-27f2d-default-rtdb.firebaseio.com/sets.json";
+
+  useEffect(() => {
+    dispatch(requestActions.setLoading(true));
+    fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        const sets = [];
+        for (const key in data) {
+          const set = { id: key, ...data[key] };
+          sets.push(set);
+        }
+        dispatch(favActions.setFavs());
+        dispatch(requestActions.setRequests(sets));
+        dispatch(requestActions.setLoading(false));
+      });
+  }, [dispatch]);
+
   return (
     <Layout>
       <Routes>

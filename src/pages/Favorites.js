@@ -1,7 +1,7 @@
+import Fav from '../components/favorites/Fav';
+
 function Favorites() {
-    return ( <p>
-        Favorites
-    </p>)
+    return ( <Fav />)
 };
 
 export default Favorites;

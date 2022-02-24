@@ -9,6 +9,7 @@ function Explore(props) {
       <ul className={classes.wrapList}>
         {DUMMY_ITEMS.map((comment) => (
             <ViewSet
+             id= {comment.id}
               key={comment.id}
               title={comment.title}
               description={comment.description}

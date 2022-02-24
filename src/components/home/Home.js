@@ -28,7 +28,6 @@ function Home() {
   if (isLoading) {
     return <p>Loading...</p>;
   } else {
-    console.log(loadedSets);
     return (
       <div className={classes.home}>
         <div className={classes.wrapper}>

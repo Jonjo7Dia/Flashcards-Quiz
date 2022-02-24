@@ -31,7 +31,7 @@ function Home() {
     return (
       <div className={classes.home}>
         <div className={classes.wrapper}>
-          <Favorites />
+          <Favorites set={loadedSets}/>
           <Recents />
           <Explore set={loadedSets} />
           

@@ -1,7 +1,7 @@
 import classes from "./ViewSet.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { favActions } from "../../store/fav-slice";
 

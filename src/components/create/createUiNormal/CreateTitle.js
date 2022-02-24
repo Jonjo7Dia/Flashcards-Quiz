@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import classes from "./CreateTitle.module.css";
 import { setActions } from "../../../store/set-slice";
 
-function CreateTitle() {
+function CreateTitle(props) {
     const dispatch = useDispatch();
     const titleHolder = useSelector((state => state.set.title));
     const descHolder = useSelector((state => state.set.description));
@@ -53,7 +53,7 @@ function CreateTitle() {
           <span>Create a new study set</span>
         </div>
         <div className={classes.create}>
-          <button className={classes.createButton}>
+          <button className={classes.createButton} onClick={props.onSubmit}>
               <span>Create</span>
           </button>
         </div>

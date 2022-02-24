@@ -5,8 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { setActions } from "../../../store/set-slice";
 import { useEffect } from "react";
 import { deckActions } from "../../../store/deck-slice";
+import { useNavigate } from "react-router";
 
 function CreateNormal() {
+    const navigate = useNavigate();
   const dispatch = useDispatch();
   const DUMMY_PRODUCTS = useSelector((state) => state.deck.items);
 
@@ -43,17 +45,16 @@ function CreateNormal() {
         dispatch(setActions.resetDeck());
         dispatch(deckActions.reset());
         dispatch(deckActions.rerender());
-
-        console.log(DUMMY_PRODUCTS);
-        console.log(title);
+        navigate('/');
+        
     }
   }
 
   return (
     <div className={classes.body}>
       <form action="" onSubmit={onSubmitHandler} className={classes.form}>
-        <CreateTitle />
-        <CreateBody />
+        <CreateTitle onSubmit={onSubmitHandler}/>
+        <CreateBody onSubmit={onSubmitHandler}/>
       </form>
     </div>
   );

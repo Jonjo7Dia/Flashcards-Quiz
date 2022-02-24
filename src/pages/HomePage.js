@@ -1,7 +1,6 @@
+import Home from "../components/home/Home";
 function HomePage() {
-    return ( <p>
-        HomePage
-    </p>)
-};
+  return <Home />;
+}
 
 export default HomePage;

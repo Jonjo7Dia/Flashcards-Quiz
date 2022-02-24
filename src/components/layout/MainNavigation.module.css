@@ -27,7 +27,7 @@
   .firstNav {
     justify-content: flex-start;
   }
-  li {
+  .firstNav li {
     height: 100%;
     margin-right: 2rem;
     margin-left: 2rem;
@@ -36,7 +36,7 @@
     align-items: center;
     border: 0.25rem solid transparent;
   }
-  li:hover {
+  .firstNav li:hover {
     border-bottom-color: #aab1f9;
     border-bottom-width: 0.25rem;
     border-bottom-style: solid;

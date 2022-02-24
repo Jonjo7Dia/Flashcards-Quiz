@@ -16,11 +16,13 @@ const favSlice = createSlice({
     },
     addFav(state, action){
         let id = action.payload;
-        console.log(id);
         let holder = [...state.fav];
-        holder = [...holder, id];
-        state.fav = holder;
-        localStorage.setItem('Favorites', JSON.stringify(holder));
+        if (!holder.includes(id)){
+          holder = [...holder, id];
+          state.fav = holder;
+          localStorage.setItem('Favorites', JSON.stringify(holder));
+        }
+        
     },
     removeFav(state, action){
       const id = action.payload;

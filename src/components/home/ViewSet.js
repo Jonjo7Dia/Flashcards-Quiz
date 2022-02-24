@@ -3,29 +3,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {favActions} from '../../store/fav-slice';
-
+import { favActions } from "../../store/fav-slice";
 
 function ViewSet(props) {
-  const dispatch =   useDispatch()
- 
-
-  const [isFavorite, setIsFavorite] = useState(false);
-
+  const dispatch = useDispatch();
+  const checker = useSelector((state) => state.fav.fav);
+  let startingValue;
+  if (checker.includes(props.id)) {
+    startingValue = true;
+  }
+  const [isFavorite, setIsFavorite] = useState(startingValue);
   function toggleFavoriteHandler() {
     setIsFavorite(!isFavorite);
-    if(!isFavorite){
+    if (isFavorite) {
       dispatch(favActions.removeFav(props.id));
+    } else {
+      dispatch(favActions.addFav(props.id));
     }
   }
   let heartClass;
-  if(isFavorite){
-      heartClass = classes.isFav;
-      dispatch(favActions.addFav(props.id));
-  }
-  else{
-      heartClass = classes.heartIcon;
-      
+  if (startingValue) {
+    heartClass = classes.isFav;
+  } else {
+    heartClass = classes.heartIcon;
   }
 
   return (

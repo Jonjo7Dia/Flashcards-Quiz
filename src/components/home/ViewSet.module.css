@@ -65,9 +65,7 @@
 .heartIcon{
 
 }
-.heartIcon:hover {
-   color: red;
-}
+
 .isFav{
     color: red;
 }

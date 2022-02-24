@@ -1,0 +1,17 @@
+.termList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.terms {
+  width: 100%;
+}
+.termList li {
+  width: 100%;
+  margin-bottom: 1rem;
+  height: auto;
+}
+.numOfTerms{
+    margin-bottom: 3rem;
+    font-size: 1.25rem;
+}

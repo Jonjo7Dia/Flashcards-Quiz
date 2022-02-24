@@ -1,0 +1,10 @@
+.body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.wrapper {
+    width: 60%;
+   
+    margin-top: 3rem;
+}

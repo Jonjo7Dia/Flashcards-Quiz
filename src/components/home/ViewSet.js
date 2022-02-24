@@ -4,9 +4,13 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import {useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { favActions } from "../../store/fav-slice";
+import { useNavigate } from "react-router";
 
 function ViewSet(props) {
+  let navigate = useNavigate();
+
   const dispatch = useDispatch();
+  let heart = false;
   const checker = useSelector((state) => state.fav.fav);
   let startingValue;
   if (checker.includes(props.id)) {
@@ -15,6 +19,7 @@ function ViewSet(props) {
   const [isFavorite, setIsFavorite] = useState(startingValue);
   function toggleFavoriteHandler() {
     setIsFavorite(!isFavorite);
+    heart = true;
     if (isFavorite) {
       dispatch(favActions.removeFav(props.id));
     } else {
@@ -27,10 +32,16 @@ function ViewSet(props) {
   } else {
     heartClass = classes.heartIcon;
   }
+  function openQuizHandler() {
+    if(!heart){
+      console.log(props.id);
+      navigate(`/sets/${props.id}`, {replace: true});
+    }
+  }
 
   return (
     <li key={props.id}>
-      <div className={classes.daddy} id={props.id}>
+      <div className={classes.daddy} id={props.id}  onClick={openQuizHandler}>
         <div className={classes.header}>
           <div className={classes.title}>
             <h4>{props.title}</h4>

@@ -1,7 +1,7 @@
 .controlActions {
-    height: 20%;
+    height: 10%;
     width: 30%;
-    margin-left: 3.5%;
+
     display: flex;
     flex-direction: row;
     justify-content: space-around;

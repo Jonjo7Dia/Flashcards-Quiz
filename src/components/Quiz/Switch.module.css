@@ -1,0 +1,22 @@
+.switchHolder {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+}
+.switch {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.switchHolder:hover {
+  cursor: pointer;
+  color: #ffcd1f;
+}
+
+.switch svg {
+  margin-right: 5%;
+}

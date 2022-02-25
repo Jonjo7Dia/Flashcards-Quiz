@@ -10,7 +10,7 @@ function Card(props) {
         content = props.term;
     }
   return (
-    <div className={classes.cardBody}>
+    <div className={classes.cardBody} onClick={props.flip}>
       <div className={classes.text}>{content}</div>
     </div>
   );

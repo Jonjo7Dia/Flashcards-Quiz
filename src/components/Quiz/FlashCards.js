@@ -3,12 +3,19 @@ import Card from "./Card";
 import CardControls from "./CardControls";
 import { useState } from "react";
 import useKeypress from "react-use-keypress";
+import Switch from './Switch';
 function FlashCards(props) {
   const [counter, setCounter] = useState(1);
   const [front, setFront] = useState(true);
+  const [termsFirst, setTermsFirst] = useState(true);
+  function termsHandler(){
+      setTermsFirst(!termsFirst);
+  }
+  
   let items = props.deck;
   let length = items.length;
   let content;
+  let frontContent;
   let holderClass;
   let frontClass;
   if (front) {
@@ -19,43 +26,51 @@ function FlashCards(props) {
     holderClass = classes.holderTransform;
     frontClass = classes.frontTransform;
   }
-
+  
   function nextCardHandler() {
-    if (counter < length) {
-      setCounter(counter + 1);
-    } else {
-      setCounter(1);
-    }
+    setFront(true);
+    setTimeout(function () {
+      if (counter < length) {
+        setCounter(counter + 1);
+      } else {
+        setCounter(1);
+      }
+    }, 100);
   }
   function lastCardHandler() {
-    if (counter > 1) {
-      setCounter(counter - 1);
-    } else {
-      setCounter(length);
-    }
+    setFront(true);
+    setTimeout(function () {
+      if (counter > 1) {
+        setCounter(counter - 1);
+      } else {
+        setCounter(length);
+      }
+    }, 100);
   }
   function toggleFrontHandler() {
     setFront(!front);
   }
   if (items[counter - 1].url.length > 0) {
-    content = <Card image={items[counter - 1].url} />;
+    content = <Card image={items[counter - 1].url} flip={toggleFrontHandler} />;
   } else {
-    content = <Card term={items[counter - 1].definition} />;
+    content = (
+      <Card term={items[counter - 1].definition} flip={toggleFrontHandler} />
+    );
+  }
+  if (!termsFirst){
+      frontContent = content;
+      content = <Card term={items[counter - 1].term} flip={toggleFrontHandler} />;
+  }
+  else {
+      frontContent = <Card term={items[counter - 1].term} flip={toggleFrontHandler} />;
   }
 
-  console.log(front);
   useKeypress(["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"], (event) => {
     if (event.key === "ArrowLeft") {
-      setFront(true);
-      setTimeout(function () {
         lastCardHandler();
-      }, 100);
     }
     if (event.key === "ArrowRight") {
-      setFront(true);
-      setTimeout(function () {
-        nextCardHandler();
-      }, 100);
+      nextCardHandler();
     }
     if (event.key === "ArrowDown" || event.key === "ArrowUp") {
       event.preventDefault();
@@ -68,7 +83,7 @@ function FlashCards(props) {
       <div className={holderClass}>
         <div className={classes.back}>{content} </div>
         <div className={frontClass}>
-          <Card term={items[counter - 1].term} />
+          {frontContent}
         </div>
       </div>
 
@@ -78,6 +93,7 @@ function FlashCards(props) {
         current={counter}
         total={length}
       />
+      <Switch switch={termsHandler}/>
     </div>
   );
 }

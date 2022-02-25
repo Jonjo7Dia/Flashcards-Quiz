@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
   
 }
 .text {
@@ -20,4 +21,7 @@
 img {
     max-height: 25rem;
     max-width: 65%;
+}
+.cardBody:hover{
+    cursor: pointer;
 }

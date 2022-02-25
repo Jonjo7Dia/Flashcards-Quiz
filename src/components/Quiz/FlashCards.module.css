@@ -9,13 +9,9 @@
     flex-direction: column;
     align-items: center;
 }
-.back {
-    display: none;
-}
-.front {
-    
-}
+
 .cards {
     height: 80%;
     width: 80%;
+
 }

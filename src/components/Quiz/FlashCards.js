@@ -9,6 +9,16 @@ function FlashCards(props) {
   let items = props.deck;
   let length = items.length;
   let content;
+  let holderClass;
+  let frontClass;
+  if (front) {
+    holderClass = classes.holder;
+    frontClass = classes.front;
+  }
+  if (!front) {
+    holderClass = classes.holderTransform;
+    frontClass = classes.frontTransform;
+  }
 
   function nextCardHandler() {
     if (counter < length) {
@@ -27,26 +37,25 @@ function FlashCards(props) {
   function toggleFrontHandler() {
     setFront(!front);
   }
+  if (items[counter - 1].url.length > 0) {
+    content = <Card image={items[counter - 1].url} />;
+  } else {
+    content = <Card term={items[counter - 1].definition} />;
+  }
 
-  if (front) {
-    content = <Card term={items[counter - 1].term} />;
-  }
-  if (!front) {
-    if (items[counter - 1].url.length > 0) {
-      content = <Card image={items[counter - 1].url} />;
-    } else {
-      content = <Card term={items[counter - 1].definition} />;
-    }
-  }
   console.log(front);
   useKeypress(["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"], (event) => {
     if (event.key === "ArrowLeft") {
       setFront(true);
-      lastCardHandler();
+      setTimeout(function () {
+        lastCardHandler();
+      }, 100);
     }
     if (event.key === "ArrowRight") {
       setFront(true);
-      nextCardHandler();
+      setTimeout(function () {
+        nextCardHandler();
+      }, 100);
     }
     if (event.key === "ArrowDown" || event.key === "ArrowUp") {
       event.preventDefault();
@@ -56,7 +65,12 @@ function FlashCards(props) {
 
   return (
     <div className={classes.flashCardBody}>
-      {content}
+      <div className={holderClass}>
+        <div className={classes.back}>{content} </div>
+        <div className={frontClass}>
+          <Card term={items[counter - 1].term} />
+        </div>
+      </div>
 
       <CardControls
         next={nextCardHandler}

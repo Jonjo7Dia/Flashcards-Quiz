@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Explore from "./Explore";
 import Favorites from "./Favorites";
 import Recents from "./Recents";

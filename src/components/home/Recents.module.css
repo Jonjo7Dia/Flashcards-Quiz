@@ -1,0 +1,22 @@
+.wrapList {
+    display: flex;
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+   
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.linkToFav{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.linkToFav a {
+    margin-right: 1rem;
+    font-size: 0.8rem;
+}
+.linkToFav a:hover{
+    color: #4554f7;
+}

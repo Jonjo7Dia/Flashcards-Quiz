@@ -13,7 +13,7 @@ function Home() {
       <div className={classes.home}>
         <div className={classes.wrapper}>
           <Favorites set={loadedSets}/>
-          <Recents />
+          <Recents set = {loadedSets}/>
           <Explore set={loadedSets} />
           
         </div>

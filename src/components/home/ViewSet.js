@@ -5,6 +5,7 @@ import {useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { favActions } from "../../store/fav-slice";
 import { useNavigate } from "react-router";
+import {recentActions} from '../../store/rec-slice';
 
 function ViewSet(props) {
   let navigate = useNavigate();
@@ -34,8 +35,9 @@ function ViewSet(props) {
   }
   function openQuizHandler() {
     if(!heart){
-      console.log(props.id);
+
       navigate(`/sets/${props.id}`, {replace: true});
+      dispatch(recentActions.addRecents(props.id));
     }
   }
 

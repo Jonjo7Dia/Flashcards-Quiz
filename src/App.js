@@ -8,7 +8,7 @@ import Layout from "./components/layout/Layout";
 import { useDispatch } from "react-redux";
 import { favActions } from "../src/store/fav-slice";
 import { requestActions } from "../src/store/request-slice";
-
+import {recentActions} from '../src/store/rec-slice';
 import { useEffect} from "react";
 
 function App() {
@@ -29,6 +29,7 @@ function App() {
           sets.push(set);
         }
         dispatch(favActions.setFavs());
+        dispatch(recentActions.setRecents());
         dispatch(requestActions.setRequests(sets));
         dispatch(requestActions.setLoading(false));
       });

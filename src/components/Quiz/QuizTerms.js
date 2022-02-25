@@ -3,7 +3,7 @@ import Term from "./Term";
 
 function QuizTerms(props) {
   let items = props.deck;
-  console.log(items);
+
   return (
     <div>
       <div className={classes.numOfTerms}>

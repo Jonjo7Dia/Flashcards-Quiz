@@ -13,7 +13,7 @@ function Quiz() {
     <div className={classes.body}>
       <div className={classes.wrapper}>
         <QuizTitle title = {data.title} />
-        <FlashCards />
+        <FlashCards deck = {data.deck}/>
         <QuizTerms length = {data.deck.length} deck = {data.deck}/>
       </div>
     </div>

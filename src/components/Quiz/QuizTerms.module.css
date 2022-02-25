@@ -10,6 +10,7 @@
   width: 100%;
   margin-bottom: 1rem;
   height: auto;
+  min-height: 2rem;
 }
 .numOfTerms{
     margin-bottom: 3rem;

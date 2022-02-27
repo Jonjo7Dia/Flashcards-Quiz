@@ -1,49 +1,55 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import SearchBar from '../UI/SearchBar';
+import SearchBar from "../UI/SearchBar";
 import classes from "./MainNavigation.module.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars} from '@fortawesome/free-solid-svg-icons';
-import MobileNavigation from './MobileNavigation';
-import { useDispatch } from "react-redux";
-import {searchActions} from '../../store/search-slice';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import MobileNavigation from "./MobileNavigation";
 
+import { useDispatch, useSelector } from "react-redux";
+import { searchActions } from "../../store/search-slice";
 function MainNavigation() {
- const dispatch = useDispatch();
-  const [mobileNavigation, setMobileNavigation ] = useState(false);
-  const[searchBarIsActive, setSearchBarIsActive] = useState(false);
-  
-  function toggleSearching() {
-    setSearchBarIsActive(true);
+  const dispatch = useDispatch();
+  const [mobileNavigation, setMobileNavigation] = useState(false);
+  const [searchBarIsActive, setSearchBarIsActive] = useState(false);
+  const searchValue = useSelector((state) => state.search.search);
 
+  function toggleSearching() {
+    if (searchValue.length > 0) {
+      setTimeout(function () {
+        dispatch(searchActions.setSearching(true));
+      }, 200);
+    }
+    setSearchBarIsActive(true);
   }
   function toggleNotSearching() {
-    setSearchBarIsActive(false);
+    setTimeout(function () {
+      setSearchBarIsActive(false);
+      dispatch(searchActions.setSearching(false));
+
+    }, 100);
   }
   function toggleShowMobile() {
-    setMobileNavigation(prevState => {
+    setMobileNavigation((prevState) => {
       return !prevState;
-    })
+    });
   }
   let isSearching = searchBarIsActive;
-  if (isSearching){
+  if (isSearching) {
     isSearching = classes.searching;
-  }
-  else{
+  } else {
     isSearching = classes.notSearching;
   }
 
-  dispatch(searchActions.setSearching(searchBarIsActive));
   return (
     <header className={classes.header}>
-      {mobileNavigation && <MobileNavigation onClick={toggleShowMobile}/>}
+      {mobileNavigation && <MobileNavigation onClick={toggleShowMobile} />}
       <ul className={classes.firstNav}>
-
         <li className={classes.logo}>
           <Link to="/">FLASHCARDS</Link>
         </li>
         <li>
-            <Link to="/">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
           <Link to="favorites">Favorites</Link>
@@ -51,12 +57,16 @@ function MainNavigation() {
         <li>
           <Link to="create"> Create</Link>
         </li>
-
       </ul>
-      <div className={classes.burger}><button onClick={toggleShowMobile}className={classes.menuButton}>
-      <FontAwesomeIcon icon={faBars} className={classes.menuLogo}/></button></div>
+      <div className={classes.burger}>
+        <button onClick={toggleShowMobile} className={classes.menuButton}>
+          <FontAwesomeIcon icon={faBars} className={classes.menuLogo} />
+        </button>
+      </div>
       <ul className={classes.secondNav}>
-        <li className={isSearching}><SearchBar onFocus={toggleSearching} onBlur={toggleNotSearching}/></li>
+        <li className={isSearching}>
+          <SearchBar onFocus={toggleSearching} onBlur={toggleNotSearching} />
+        </li>
       </ul>
     </header>
   );

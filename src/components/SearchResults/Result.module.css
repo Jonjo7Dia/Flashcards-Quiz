@@ -29,6 +29,7 @@
 .result:hover {
     background-color: #e8eaee;
     border-radius: 14px;
+    cursor: pointer;
 }
 
 

@@ -1,0 +1,34 @@
+.result {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.searchIcon {
+    width: 6%;
+    justify-content: center;
+
+}
+.resultText{
+    width: 94%;
+    justify-content: flex-start;
+    font-size: .85rem;
+}
+.result div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+   
+}
+
+.searchIcon svg {
+    height: 30%;
+    width: 100%;
+}
+.result:hover {
+    background-color: #e8eaee;
+    border-radius: 14px;
+}
+
+

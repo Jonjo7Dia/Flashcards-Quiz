@@ -26,6 +26,7 @@
 
   .firstNav {
     justify-content: flex-start;
+    width: 60%;
   }
   .firstNav li {
     height: 100%;
@@ -44,6 +45,7 @@
   }
 
   .secondNav {
+    width: 40%;
     justify-content: flex-end;
   }
 

@@ -1,0 +1,9 @@
+.searchResults {
+    width: 100%;
+
+    height: auto;
+    background-color: transparent;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+}

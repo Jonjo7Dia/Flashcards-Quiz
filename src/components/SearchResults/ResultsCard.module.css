@@ -1,0 +1,13 @@
+.resultsCard {
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.results{
+    background-color: white;
+    width: 80%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    
+    border-radius: 14px;
+}

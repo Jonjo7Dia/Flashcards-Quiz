@@ -5,9 +5,11 @@ import classes from "./MainNavigation.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars} from '@fortawesome/free-solid-svg-icons';
 import MobileNavigation from './MobileNavigation';
-
+import { useDispatch } from "react-redux";
+import {searchActions} from '../../store/search-slice';
 
 function MainNavigation() {
+ const dispatch = useDispatch();
   const [mobileNavigation, setMobileNavigation ] = useState(false);
   const[searchBarIsActive, setSearchBarIsActive] = useState(false);
   
@@ -31,7 +33,7 @@ function MainNavigation() {
     isSearching = classes.notSearching;
   }
 
-
+  dispatch(searchActions.setSearching(searchBarIsActive));
   return (
     <header className={classes.header}>
       {mobileNavigation && <MobileNavigation onClick={toggleShowMobile}/>}

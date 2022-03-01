@@ -49,3 +49,19 @@
     max-height: 10rem;
     max-width: 100%;
 }
+
+
+
+@media (max-width: 800px) {
+    .term {
+        width: 38%;
+
+    }
+    .defUrl {
+        width: 58%;
+    }
+    .complete div {
+        justify-content: center;
+        font-size: 3vw;
+    }
+  }

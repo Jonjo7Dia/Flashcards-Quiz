@@ -12,8 +12,16 @@
     height: 50%;
     display: flex;
     justify-content: center;
+    user-select: none;
+
 }
 .controls:hover {
     cursor: pointer;
     color: #ffcd1f;
 }
+@media (max-width: 800px) {
+    .controlActions {
+        width: 100%;
+        
+    }
+  }

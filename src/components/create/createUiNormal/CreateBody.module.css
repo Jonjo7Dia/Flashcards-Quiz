@@ -56,3 +56,11 @@
     cursor: pointer;
     background-color: #53a4a6;
 }
+
+
+
+@media (max-width: 800px) {
+    .createButton{
+        width: 100%;
+    }
+  }

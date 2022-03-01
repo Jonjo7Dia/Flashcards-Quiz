@@ -126,3 +126,38 @@
 .button:hover .imageLogo{
     color: #ffcd1f;
 }
+
+
+
+@media (max-width: 800px) {
+  .placeholder div{
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+  .inputs {
+    flex-wrap: wrap;
+  }
+  .term {
+    width: 50%;
+    height: 60%;
+  }
+  .imageButton{
+    height: 35%;
+    width: 30%;
+ 
+  }
+  .button {
+    height: 100%;
+  }
+  .label {
+    display: flex;
+
+    justify-content: center;
+  }
+  .term input{
+    text-align: center;
+  }
+
+  
+
+}

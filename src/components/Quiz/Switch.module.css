@@ -20,3 +20,10 @@
 .switch svg {
   margin-right: 5%;
 }
+
+@media (max-width: 800px) {
+    .switch{
+        width: 80%;
+        
+    }
+  }

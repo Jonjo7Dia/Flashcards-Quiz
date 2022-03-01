@@ -37,7 +37,7 @@ function CreateNormal() {
   }, [DUMMY_PRODUCTS]);
   function onSubmitHandler(event) {
     event.preventDefault();
-    if (DUMMY_PRODUCTS.length !== view.length || title.length === 0){
+    if (DUMMY_PRODUCTS.length !== view.length || title.length === 0 || DUMMY_PRODUCTS.length === 0){
         alert('Your set is missing information');
     }
     else {

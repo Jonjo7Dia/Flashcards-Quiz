@@ -5,8 +5,8 @@ import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
 function CardControls(props) {
   return (
-    <div className={classes.controlActions} onClick={props.last}>
-      <div className={classes.controls} >
+    <div className={classes.controlActions} >
+      <div className={classes.controls} onClick={props.last} >
         <FontAwesomeIcon icon={faArrowLeftLong} />
       </div>
       <div>{props.current}/{props.total}</div>

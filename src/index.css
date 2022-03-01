@@ -3,6 +3,7 @@
 * {
   box-sizing: border-box;
   margin-block-start: 0;
+  list-style: none;
 }
 body {
   font-family: 'Montserrat', sans-serif;

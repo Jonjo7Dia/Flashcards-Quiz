@@ -1,17 +1,17 @@
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import CreateNewDeck from "./pages/CreateNewDeck";
-import Favorites from "./pages/Favorites";
-import Sets from "./pages/Sets";
-
 import Layout from "./components/layout/Layout";
 import { useDispatch } from "react-redux";
 import { favActions } from "../src/store/fav-slice";
 import { requestActions } from "../src/store/request-slice";
-import {recentActions} from '../src/store/rec-slice';
-import { useEffect} from "react";
+import { recentActions } from "../src/store/rec-slice";
+import { useEffect } from "react";
 
 function App() {
+  const Favorites = React.lazy(() => import("./pages/Favorites"));
+  const CreateNewDeck = React.lazy(()=> import('./pages/CreateNewDeck'));
+  const Sets = React.lazy(()=> import('./pages/Sets'));
+  const HomePage = React.lazy(()=>import('./pages/HomePage'));
   const dispatch = useDispatch();
   const url =
     "https://react-hooks-update-27f2d-default-rtdb.firebaseio.com/sets.json";
@@ -37,13 +37,14 @@ function App() {
 
   return (
     <Layout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="create" element={<CreateNewDeck />} />
-        <Route path="favorites" element={<Favorites />} />
-        <Route path="sets/:id" element={<Sets />} />
-
-      </Routes>
+      <Suspense fallback ={<p>loading</p>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="create" element={<CreateNewDeck />} />
+          <Route path="favorites" element={<Favorites />} />
+          <Route path="sets/:id" element={<Sets />} />
+        </Routes>
+      </Suspense>
     </Layout>
   );
 }

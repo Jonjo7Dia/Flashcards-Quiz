@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 function MobileNavigation(props) {
+  
   return (
     <div className={classes.body}>
       <div className={classes.content}>

@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin-block-start: 0;
   list-style: none;
+  padding: 0;
 }
 body {
   font-family: 'Montserrat', sans-serif;
@@ -13,4 +14,5 @@ body {
   margin-left: 0px;
   margin-right: 0px;
   padding: 0;
+
 }

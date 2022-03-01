@@ -103,6 +103,7 @@
     color: #2a2e3c;
     align-content: center;
     justify-content: flex-end;
+    
   }
 
   .firstNav {
@@ -133,6 +134,7 @@
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
   }
   .secondNav li {
     margin-top: auto;

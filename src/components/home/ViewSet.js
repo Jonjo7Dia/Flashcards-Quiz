@@ -36,7 +36,7 @@ function ViewSet(props) {
   function openQuizHandler() {
     if(!heart){
 
-      navigate(`/sets/${props.id}`, {replace: true});
+      navigate(`/sets/${props.id}`, {replace: false});
       dispatch(recentActions.addRecents(props.id));
     }
   }

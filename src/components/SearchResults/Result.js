@@ -9,7 +9,7 @@ function Result(props) {
     const dispatch = useDispatch();
  function openSetHandler(){
     console.log(props.id);
-    navigate(`/sets/${props.id}`, {replace: true});
+    navigate(`/sets/${props.id}`, {replace: false});
     dispatch(recentActions.addRecents(props.id));
  }
 

@@ -13,8 +13,8 @@ function Recents(props) {
       holder.push(DUMMY_ITEMS[x]);
     }
   }
-  return (
-    <div>
+  if (holder.length > 0){
+      content =  <div>
       <p>Recents</p>
       <ul className={classes.wrapList}>
         {holder.map((comment) => (
@@ -28,7 +28,12 @@ function Recents(props) {
         ))}
       </ul>
     </div>
-  );
+  }
+  else {
+      content = <div></div>
+  }
+ 
+  return content;
 }
 
 export default Recents;

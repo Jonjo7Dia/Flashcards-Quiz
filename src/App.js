@@ -2,16 +2,18 @@ import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import { useDispatch } from "react-redux";
+import HomePage from './pages/HomePage';
+import Favorites from './pages/Favorites';
+import CreateNewDeck from './pages/CreateNewDeck';
+import Sets from './pages/Sets';
 import { favActions } from "../src/store/fav-slice";
 import { requestActions } from "../src/store/request-slice";
 import { recentActions } from "../src/store/rec-slice";
 import { useEffect } from "react";
 
 function App() {
-  const Favorites = React.lazy(() => import("./pages/Favorites"));
-  const CreateNewDeck = React.lazy(()=> import('./pages/CreateNewDeck'));
-  const Sets = React.lazy(()=> import('./pages/Sets'));
-  const HomePage = React.lazy(()=>import('./pages/HomePage'));
+ 
+
   const dispatch = useDispatch();
   const url =
     "https://react-hooks-update-27f2d-default-rtdb.firebaseio.com/sets.json";

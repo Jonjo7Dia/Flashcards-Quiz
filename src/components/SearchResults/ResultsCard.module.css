@@ -11,6 +11,10 @@
     
     border-radius: 14px;
 }
+.results p {
+    margin-left: 5px;
+    margin-top: 5px;
+}
 
 @media (max-width: 800px) {
     .resultsCard{

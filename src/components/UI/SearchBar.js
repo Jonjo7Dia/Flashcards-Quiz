@@ -29,6 +29,9 @@ function SearchBar(props) {
         className={classes.form}
         onFocus={props.onFocus}
         onBlur={props.onBlur}
+        onSubmit={(e)=>{
+          e.preventDefault();
+        }}
       >
         <FontAwesomeIcon
           icon={faMagnifyingGlass}

@@ -17,6 +17,10 @@ function ResultsCard() {
           ))}
         </div>
       )}
+      {!checkStatement && <div className={classes.results}>
+        <p>no search results found..</p> 
+        </div>
+        }
 
     </div>
   );
